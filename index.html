@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meghana Portfolio</title>
+  <style>
+    /* Global */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Segoe UI", sans-serif;
+      line-height: 1.6;
+      background: #f9fafc;
+      color: #333;
+      scroll-behavior: smooth;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    /* Dark mode */
+    body.dark {
+      background: #1e1e1e;
+      color: #e4e4e4;
+    }
+    body.dark header, body.dark footer, body.dark nav {
+      background: #111;
+    }
+    body.dark ul li, body.dark .project-card, body.dark form {
+      background: #2b2b2b;
+      color: #e4e4e4;
+      box-shadow: 0 2px 6px rgba(255,255,255,0.05);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #ddd;
+    }
+
+    /* Buttons */
+    .btn-container {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+    }
+    .btn {
+      background: #1abc9c;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background: #16a085;
+    }
+
+    /* Navbar */
+    nav {
+      position: sticky;
+      top: 0;
+      background: #2c3e50;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      padding: 15px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      background: #1abc9c;
+      border-radius: 5px;
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+    h2::after {
+      content: "";
+      display: block;
+      width: 60%;
+      height: 3px;
+      background: #1abc9c;
+      margin-top: 5px;
+      border-radius: 2px;
+    }
+
+    /* Lists */
+    ul {
+      list-style: none;
+      padding-left: 10px;
+    }
+    ul li {
+      background: #fff;
+      margin: 8px 0;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    ul li:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Projects */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .project-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .project-card:hover {
+      transform: scale(1.05);
+    }
+    .project-card a {
+      color: #1abc9c;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* Contact */
+    .contact p {
+      margin: 8px 0;
+    }
+    .contact a {
+      color: #1abc9c;
+      text-decoration: none;
+    }
+
+    /* Contact Form */
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    input, textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    input:focus, textarea:focus {
+      border-color: #1abc9c;
+      outline: none;
+    }
+    button[type="submit"] {
+      background: #1abc9c;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    button[type="submit"]:hover {
+      background: #16a085;
+    }
+
+    /* Footer */
+    footer {
+      background: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      nav a {
+        padding: 10px;
+        font-size: 0.9rem;
+      }
+      .btn {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+      }
+      .btn-container {
+        flex-direction: column;
+        gap: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Bobbili Mohana Sri Lakshmi Meghana</h1>
+    <p>Software Developer | Python | MERN Stack | React</p>
+    <div class="btn-container">
+      <a href="https://docs.google.com/document/d/1kQ48Hw1KvtUlFGlMrCMM3jkJgVwzOqEN/edit?usp=sharing&ouid=108798006067556908265&rtpof=true&sd=true" 
+         target="_blank" class="btn">📄 Download Resume</a>
+      <button class="btn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#internships">Internships</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>An enthusiastic fresher passionate about software development and problem-solving. Skilled in Python, Networking, and full-stack web development. Committed to continuous learning and eager to contribute effectively in a collaborative environment.</p>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <ul>
+      <li><b>B.Tech (CSE)</b> - Swarnandhra College of Engineering (CGPA: 8.41/10) (2022 - Present)</li>
+      <li><b>Intermediate</b> - Sri Chaitanya Junior College, Amalapuram (82.3%) (2020 – 2022)</li>
+      <li><b>SSC</b> - Aditya EM High School, Amalapuram (96.4%) (2019 – 2020)</li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <ul>
+      <li><b>Programming:</b> Python, Java, JavaScript, DSA</li>
+      <li><b>Frameworks:</b> React.js, React Native, Node.js</li>
+      <li><b>Databases:</b> MySQL, MongoDB</li>
+      <li><b>Web Development:</b> MERN, HTML, CSS, Tailwind CSS</li>
+      <li><b>Tools:</b> GitHub, VS Code, Netlify</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>Disease Detection System</h3>
+        <p>Multilingual web app with voice support for disease detection.</p>
+        <a href="https://iridescent-sunburst-905b1e.netlify.app/" target="_blank">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>LearnHub</h3>
+        <p>Learning platform with MERN stack, authentication, and resource management.</p>
+        <a href="https://github.com/MeghanaBobbili11/Learnhub.git" target="_blank">GitHub Link</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="internships">
+    <h2>Internships</h2>
+    <p><b>Python Full Stack Developer Intern</b> - Black Bucks (Jun 2024 – Aug 2024)</p>
+    <ul>
+      <li>Mentored students and guided projects as SME.</li>
+      <li>Created assessments, assignments, and lesson plans.</li>
+      <li>Worked on MERN, Python, HTML, CSS, JS.</li>
+      <li><a href="https://drive.google.com/file/d/1KhxLTUlvmifRWKTPv8NLAMpxdoPV7OY0/view?usp=sharing">Internship Experience Letter</a><li>
+    </ul>
+  </section>
+
+    <section id="certifications">
+  <h2>Certifications</h2>
+  <ul>
+    <li>
+      <img src="https://img.icons8.com/color/30/000000/react-native.png" alt="MERN" width="22">
+      <a href="https://drive.google.com/file/d/13DXxHOa0agwre4SUyPvNVUNTgEuatxOQ/view" target="_blank">Full Stack Development (MERN) – May 2025</a>
+    </li>
+    <li>
+      <img src="https://img.icons8.com/color/30/000000/html-5.png" alt="Web Dev" width="22">
+      <a href="https://drive.google.com/file/d/1RMYudzYYqi70eb8jzpgMTgCJo6lcRurX/view" target="_blank">Web Development (Trigovex) – Jan 2022</a>
+    </li>
+    <li>
+      <img src="https://img.icons8.com/color/30/000000/python.png" alt="Python" width="22">
+      <a href="https://drive.google.com/file/d/1vfD32XnEVNIraD1OPLly5J-0DJPr0GrC/view" target="_blank">Python Fundamentals (Great Learning) – Jan 2022</a>
+    </li>
+    <li>
+      <img src="https://img.icons8.com/color/30/000000/amazon-web-services.png" alt="AWS" width="22">
+      <a href="https://drive.google.com/file/d/120hA12jbQ-fM6J2qv1tVzrPaZUB7PC-y/view" target="_blank">AWS Cloud (Eduskills) – Sep–Nov 2023</a>
+    </li>
+    <li>
+      <img src="https://img.icons8.com/color/30/000000/amazon-web-services.png" alt="AWS Data" width="22">
+      <a href="https://drive.google.com/file/d/120hA12jbQ-fM6J2qv1tVzrPaZUB7PC-y/view" target="_blank">AWS Data Engineering (Eduskills) – Jul–Sep 2024</a>
+    </li>
+    <li>
+      <img src="https://img.icons8.com/color/30/000000/hacker.png" alt="Ethical Hacking" width="22">
+      <a href="https://drive.google.com/file/d/1rZ11Fx2BXZ2LiAL6PLVovhXczotnT0Dt/view" target="_blank">Ethical Hacking (Eduskills) – Oct–Dec 2024</a>
+    </li>
+    <li>
+      <img src="https://img.icons8.com/color/30/000000/artificial-intelligence.png" alt="Data Science" width="22">
+      <a href="https://drive.google.com/file/d/1mSCqShqc8LZL6R2w0V-mvjhN_3GJGzG0/view" target="_blank">Altair Data Science (Eduskills) – Jan–Mar 2025</a>
+    </li>
+    <li>
+      <img src="https://img.icons8.com/color/30/000000/artificial-intelligence.png" alt="AI ML" width="22">
+      <a href="https://drive.google.com/file/d/1pMn6IoDaLgtakI1eH-wdjakfHZ7A6oTI/view" target="_blank">TechCamp on Google AI-ML (Eduskills) – Mar 2025</a>
+    </li>
+    <li>
+      <img src="https://img.icons8.com/color/30/000000/python.png" alt="NPTEL Python" width="22">
+      <a href="https://drive.google.com/file/d/1J4kKmeKLJfzBGA7RTaGkZRDuqjaJBGm8/view" target="_blank">NPTEL – Joy of Computing Using Python – Jul–Oct 2024</a>
+    </li>
+  </ul>
+</section>
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:bmslmeghana@gmail.com">bmslmeghana@gmail.com</a></p>
+    <p>Phone: +91-9381148497</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/bmslmeghana" target="_blank">linkedin.com/in/bmslmeghana</a></p>
+
+    <!-- Contact Form -->
+    <form action="https://formspree.io/f/yourFormID" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+ 
+  <footer>
+    <p>&copy; 2025 Meghana | Portfolio</p>
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+      const btn = document.querySelector(".btn-container button");
+      btn.textContent = document.body.classList.contains("dark") ? "☀️ Light Mode" : "🌙 Dark Mode";
+    }
+  </script>
+
+</body>
+</html>
